@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>101 Roses for Sore 🌹</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f7e9ed;font-family:Arial,sans-serif;color:#38272e;display:flex;justify-content:center;align-items:center;min-height:100vh}
+.phone{width:320px;height:620px;background:#fff;border:8px solid #282428;border-radius:42px;overflow:hidden;position:relative;box-shadow:0 15px 45px #b995a5}
+.status{height:30px;padding:8px 20px;display:flex;justify-content:space-between;font-size:12px}
+.screen{padding:20px;height:calc(100% - 30px);background:linear-gradient(#fff8fa,#f5dce5)}
+h1{font-size:25px;margin-top:45px}
+p{font-size:13px;line-height:1.6}
+.rose{text-align:center;font-size:65px;margin:30px}
+.apps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 10px;margin-top:35px}
+.app{border:0;background:transparent;text-align:center;color:#38272e;font-size:11px;cursor:pointer}
+.icon{display:block;margin:0 auto 7px;width:54px;height:54px;border-radius:15px;background:#fff;display:grid;place-items:center;font-size:27px;box-shadow:0 3px 8px #ddc1cd}
+.panel{display:none;position:absolute;inset:30px 0 0;background:#fff8fa;padding:25px 20px;overflow:auto}
+.panel h2{font-size:22px}
+.close{background:#efd5df;border:0;border-radius:20px;padding:10px 16px}
+.note{background:white;padding:14px;border-radius:12px;margin:12px 0;font-size:13px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="phone">
+<div class="status"><span>9:41</span><span>●●● ▰</span></div>
+<div class="screen">
+<p>♡ 101 ROSES FOR SORE</p>
+<h1>Hi, Sore. 🌷</h1>
+<p>A little world made just for you.</p>
+<div class="rose">🌹</div>
+<p style="text-align:center">some stories bloom forever.</p>
+<div class="apps">
+<button class="app" onclick="openApp('notes')"><span class="icon">📝</span>Notes</button>
+<button class="app" onclick="openApp('photos')"><span class="icon">🌷</span>Photos</button>
+<button class="app" onclick="openApp('messages')"><span class="icon">💬</span>Messages</button>
+<button class="app" onclick="openApp('music')"><span class="icon">🎵</span>Music</button>
+<button class="app" onclick="openApp('about')"><span class="icon">♡</span>About us</button>
+<button class="app" onclick="openApp('letter')"><span class="icon">💌</span>Letter</button>
+</div>
+</div>
+<div class="panel" id="panel">
+<button class="close" onclick="closeApp()">← Back</button>
+<div id="content"></div>
+</div>
+</div>
+<script>
+const data={
+notes:['Notes','<div class="note"><b>jadwal hari minggu</b><br>11:00......</div><div class="note"><b>lirik lagu</b><br>ayo ayo</div><div class="note"><b>aku punya pacar</b><br>namanya jael dia nyebelin</div>'],
+photos:['Photos','<div class="note">🌹 A little photo album for Sore.<br>More memories coming soon.</div>'],
+messages:['Messages','<div class="note"><b>Jael</b><br>hey, sore. udah makan?</div><div class="note"><b>Sore</b><br>udah, cerewet banget sih.</div>'],
+music:['Music','<div class="note">🎵 our little playlist<br>01. ayo ayo<br>02. favorite song</div>'],
+about:['About us','<div class="note">Sore Dinya Athaya ♡ Jaelian Areksa Wasgar<br><br>101 roses for sore.</div>'],
+letter:['A letter for you','<div class="note">Dear Sore,<br><br>Some people feel like home, even on the hardest days. 🌹</div>']
+};
+function openApp(id){document.getElementById('content').innerHTML='<h2>'+data[id][0]+'</h2>'+data[id][1];document.getElementById('panel').style.display='block'}
+function closeApp(){document.getElementById('panel').style.display='none'}
+</script>
+</body>
+</html>
